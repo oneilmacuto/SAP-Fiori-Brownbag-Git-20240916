@@ -25,44 +25,6 @@ modules:
   - name: sap-fiori-listing-app-hdi
   parameters:
     buildpack: nodejs_buildpack
-- name: SAP_Fiori_Project_CAP-app-content
-  type: com.sap.application.content
-  path: .
-  requires:
-  - name: SAP_Fiori_Project_CAP-repo-host
-    parameters:
-      content-target: true
-  build-parameters:
-    build-result: resources
-    requires:
-    - artifacts:
-      - sapfiorilistingappsapfiorilistingapp.zip
-      name: sapfiorilistingappsapfiorilistingapp
-      target-path: resources/
-    - artifacts:
-      - listingappsapfiorilistingapptraining.zip
-      name: listingappsapfiorilistingapptraining
-      target-path: resources/
-- name: sapfiorilistingappsapfiorilistingapp
-  type: html5
-  path: app/sap-fiori-listing-app
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-- name: listingappsapfiorilistingapptraining
-  type: html5
-  path: app/sap-fiori-listing-app-training
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
 resources:
 - name: sap-fiori-listing-app-hdi
   type: com.sap.xs.hdi-container
