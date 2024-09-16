@@ -1,0 +1,23 @@
+VIEW MyService_Items AS SELECT
+  Items_0.createdAt,
+  Items_0.createdBy,
+  Items_0.modifiedAt,
+  Items_0.modifiedBy,
+  Items_0.ID,
+  Items_0.UUID,
+  Items_0.ItemName,
+  Items_0.ItemDescription,
+  Items_0.ListingExpDate,
+  Items_0.Status,
+  Items_0.InStock,
+  Items_0.Category_Category,
+  Items_0.Seller_SellerName,
+  Items_0.CountryOrigin_Country,
+  Items_0.TotalSales,
+  Items_0.SalesPastMonth
+FROM db_Items AS Items_0
+WITH ASSOCIATIONS (
+  MANY TO ONE JOIN MyService_Categories AS Category ON (Category.Category = Category_Category),
+  MANY TO ONE JOIN MyService_Seller AS Seller ON (Seller.SellerName = Seller_SellerName),
+  MANY TO ONE JOIN MyService_Countries AS CountryOrigin ON (CountryOrigin.Country = CountryOrigin_Country)
+)

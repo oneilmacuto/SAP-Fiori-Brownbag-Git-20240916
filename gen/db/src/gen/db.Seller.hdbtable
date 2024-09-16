@@ -1,0 +1,11 @@
+COLUMN TABLE db_Seller (
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  SellerName NVARCHAR(5000) NOT NULL,
+  SellerDescription NVARCHAR(5000),
+  Region NVARCHAR(5000),
+  JoiningDate NVARCHAR(5000),
+  PRIMARY KEY(SellerName)
+)

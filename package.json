@@ -1,0 +1,39 @@
+{
+  "name": "SAP_Fiori_Project_CAP",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@sap/cds": "^8",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.6",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8",
+    "@sap/ux-specification": "^1.124.0",
+    "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-sap-fiori-listing-app": "cds watch --open sap-fiori-listing-app/webapp/index.html?sap-ui-xx-viewCache=false",
+    "undeploy": "cf undeploy SAP_Fiori_Project_CAP --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-sap-fiori-listing-app-training": "cds watch --open sap-fiori-listing-app-training/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/sap-fiori-listing-app",
+    "app/sap-fiori-listing-app-training"
+  ],
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
+    }
+  }
+}

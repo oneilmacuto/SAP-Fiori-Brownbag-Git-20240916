@@ -1,0 +1,9 @@
+VIEW MyService_Categories AS SELECT
+  Categories_0.createdAt,
+  Categories_0.createdBy,
+  Categories_0.modifiedAt,
+  Categories_0.modifiedBy,
+  Categories_0.Category,
+  Categories_0.CategoryDescription,
+  Categories_0.CategoryRank
+FROM db_Categories AS Categories_0

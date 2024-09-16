@@ -1,0 +1,10 @@
+VIEW MyService_Seller AS SELECT
+  Seller_0.createdAt,
+  Seller_0.createdBy,
+  Seller_0.modifiedAt,
+  Seller_0.modifiedBy,
+  Seller_0.SellerName,
+  Seller_0.SellerDescription,
+  Seller_0.Region,
+  Seller_0.JoiningDate
+FROM db_Seller AS Seller_0

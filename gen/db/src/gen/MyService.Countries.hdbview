@@ -1,0 +1,11 @@
+VIEW MyService_Countries AS SELECT
+  Countries_0.createdAt,
+  Countries_0.createdBy,
+  Countries_0.modifiedAt,
+  Countries_0.modifiedBy,
+  Countries_0.Country,
+  Countries_0.CategoryDescription,
+  Countries_0.DistributionCapital,
+  Countries_0.Curency,
+  Countries_0.HQLocation
+FROM db_Countries AS Countries_0

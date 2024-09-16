@@ -1,0 +1,28 @@
+COLUMN TABLE MyService_Items_drafts (
+  createdAt TIMESTAMP NULL,
+  createdBy NVARCHAR(255) NULL,
+  modifiedAt TIMESTAMP NULL,
+  modifiedBy NVARCHAR(255) NULL,
+  ID NVARCHAR(36) NOT NULL,
+  UUID NVARCHAR(36) NOT NULL,
+  ItemName NVARCHAR(5000) NULL,
+  ItemDescription NVARCHAR(5000) NULL,
+  ListingExpDate NVARCHAR(5000) NULL,
+  Status NVARCHAR(5000) NULL,
+  InStock INTEGER NULL,
+  Category_Category NVARCHAR(5000) NULL,
+  Seller_SellerName NVARCHAR(5000) NULL,
+  CountryOrigin_Country NVARCHAR(5000) NULL,
+  TotalSales INTEGER NULL,
+  SalesPastMonth INTEGER NULL,
+  IsActiveEntity BOOLEAN,
+  HasActiveEntity BOOLEAN,
+  HasDraftEntity BOOLEAN,
+  DraftAdministrativeData_DraftUUID NVARCHAR(36) NOT NULL,
+  PRIMARY KEY(ID, UUID)
+) WITH ASSOCIATIONS (
+  MANY TO ONE JOIN MyService_Categories AS Category ON (Category.Category = Category_Category),
+  MANY TO ONE JOIN MyService_Seller AS Seller ON (Seller.SellerName = Seller_SellerName),
+  MANY TO ONE JOIN MyService_Countries AS CountryOrigin ON (CountryOrigin.Country = CountryOrigin_Country),
+  MANY TO ONE JOIN MyService_DraftAdministrativeData AS DraftAdministrativeData ON (DraftAdministrativeData.DraftUUID = DraftAdministrativeData_DraftUUID)
+)

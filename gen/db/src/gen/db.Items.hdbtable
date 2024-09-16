@@ -1,0 +1,23 @@
+COLUMN TABLE db_Items (
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  ID NVARCHAR(36) NOT NULL,
+  UUID NVARCHAR(36) NOT NULL,
+  ItemName NVARCHAR(5000),
+  ItemDescription NVARCHAR(5000),
+  ListingExpDate NVARCHAR(5000),
+  Status NVARCHAR(5000),
+  InStock INTEGER,
+  Category_Category NVARCHAR(5000),
+  Seller_SellerName NVARCHAR(5000),
+  CountryOrigin_Country NVARCHAR(5000),
+  TotalSales INTEGER,
+  SalesPastMonth INTEGER,
+  PRIMARY KEY(ID, UUID)
+) WITH ASSOCIATIONS (
+  MANY TO ONE JOIN db_Categories AS Category ON (Category.Category = Category_Category),
+  MANY TO ONE JOIN db_Seller AS Seller ON (Seller.SellerName = Seller_SellerName),
+  MANY TO ONE JOIN db_Countries AS CountryOrigin ON (CountryOrigin.Country = CountryOrigin_Country)
+)

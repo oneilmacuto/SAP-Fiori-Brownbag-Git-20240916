@@ -1,0 +1,12 @@
+COLUMN TABLE db_Countries (
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  Country NVARCHAR(5000) NOT NULL,
+  CategoryDescription NVARCHAR(5000),
+  DistributionCapital NVARCHAR(5000),
+  Curency NVARCHAR(5000),
+  HQLocation NVARCHAR(5000),
+  PRIMARY KEY(Country)
+)

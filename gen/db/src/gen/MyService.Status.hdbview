@@ -1,0 +1,8 @@
+VIEW MyService_Status AS SELECT
+  Status_0.createdAt,
+  Status_0.createdBy,
+  Status_0.modifiedAt,
+  Status_0.modifiedBy,
+  Status_0.StatusId,
+  Status_0.StatusName
+FROM db_Status AS Status_0

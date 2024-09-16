@@ -1,0 +1,9 @@
+COLUMN TABLE db_Status (
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  StatusId INTEGER,
+  StatusName NVARCHAR(5000) NOT NULL,
+  PRIMARY KEY(StatusName)
+)

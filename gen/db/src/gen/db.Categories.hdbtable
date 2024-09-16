@@ -1,0 +1,10 @@
+COLUMN TABLE db_Categories (
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  Category NVARCHAR(5000) NOT NULL,
+  CategoryDescription NVARCHAR(5000),
+  CategoryRank NVARCHAR(5000),
+  PRIMARY KEY(Category)
+)
